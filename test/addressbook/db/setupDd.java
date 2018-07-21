@@ -56,6 +56,19 @@ public class setupDd  {
         stmt.setString(10, "H0H0H0");
         stmt.setString(11, "Canada");
         stmt.executeUpdate();
+        //
+        stmt.setString(1, "Jack");
+        stmt.setString(2, "lor");
+        stmt.setString(3, "");
+        stmt.setString(4, "888-1221");
+        stmt.setString(5, "jack@uottawa.ca");
+        stmt.setString(6, "2 Summer");
+        stmt.setString(7, "");
+        stmt.setString(8, "Ottawa");
+        stmt.setString(9, "Ontario");
+        stmt.setString(10, "H0H0H0");
+        stmt.setString(11, "Canada");
+        stmt.executeUpdate();
 	}
 	
 	@After
