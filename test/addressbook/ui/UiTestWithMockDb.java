@@ -45,6 +45,7 @@ public class UiTestWithMockDb {
         int expsize = befsize+1;
         _uidriver.clickNew(); 
         Address addr = new Address();
+ 
         addr.setId(-1);
         addr.setLastName("a_-zAZ");
         addr.setFirstName("a_-zAZ");
@@ -61,6 +62,7 @@ public class UiTestWithMockDb {
         // click to save
         _uidriver.clickSave();
         int aftsize = _uidriver.numberOfAddresses();
+        
         System.out.println(aftsize);
         String [] addrval = _uidriver.addressEntryAt(aftsize-1);
         
@@ -89,7 +91,7 @@ public class UiTestWithMockDb {
 		_uidriver.selectAddress(0);
 		_uidriver.clickDelete();
 		int aftsize = _uidriver.numberOfAddresses();
-		System.out.println("size after delete : " +aftsize);
+		System.out.println("size after delete : " + aftsize);
 		Assert.assertEquals(expsize, aftsize);
 		
         verify(mockedDb).connect();
