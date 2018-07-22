@@ -43,7 +43,7 @@ public class UiTestWithDbSetup {
 	            insertInto("APP.ADDRESS")
 	                .columns("LASTNAME", "FIRSTNAME", "MIDDLENAME", "PHONE", "EMAIL", "ADDRESS1", "ADDRESS2", "CITY",
 	                		"STATE", "POSTALCODE", "COUNTRY")
-	                .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?")
+	                .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?","?")
 	                .build());
 	@Before
     public void prepare() throws Exception {
