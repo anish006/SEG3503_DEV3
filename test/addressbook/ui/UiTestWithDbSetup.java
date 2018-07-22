@@ -62,6 +62,7 @@ public class UiTestWithDbSetup {
         
         addressDao = new AddressDao();
         _uidriver = new UIDriver(addressDao);
+        
         dbSetup.launch();
     }
 	
@@ -74,7 +75,7 @@ public class UiTestWithDbSetup {
         int expectedSize = beforeSize+1;
         _uidriver.clickNew(); 
         Address addr = new Address();
-        addr.setId(0);
+        addr.setId(-1);
         addr.setLastName("a_-zAZ");
         addr.setMiddleName("a_-zAZ");
         addr.setFirstName("a_-zAZ");
@@ -92,7 +93,7 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();
         String [] addrval = _uidriver.addressEntryAt(afterSize-1);        
         Assert.assertEquals(expectedSize, afterSize);
-        Assert.assertEquals("Wayne", addrval[0]);
+        Assert.assertEquals("a_-zAZ", addrval[0]);
 		
 	}
 	
