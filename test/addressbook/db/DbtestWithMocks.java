@@ -169,7 +169,22 @@ public class DbtestWithMocks {
 		 verifySQLStatementParameter(strSaveAddress, 0, 11, country);
 	 }
 	 
-	 @Test
+	 private void verifySQLStatementParameter(String strsaveaddress2, int i, int j, String firstName2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void verifySQLStatementExecuted(String strsaveaddress2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void verifyPreparedStatementPresent(String strsaveaddress2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Test
 	 public void testEditRecord() throws SQLException {
 		 int id = 0;
 		 resultSet.addRow(new Object[] { id, 
