@@ -40,18 +40,17 @@ public class UiTestWithDbSetup {
 	                		"STATE", "POSTALCODE", "COUNTRY")
 	                .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?")
 	                .build());
-	
 	@Before
     public void prepare() throws Exception {
         Operation operation =
             sequenceOf(
                 DELETE_ALL,
                 INSERT_REFERENCE_DATA,
-                insertInto("VENDOR")
-                    .columns("ID", "CODE", "NAME", "COUNTRY_ID")
-                    .values(1L, "AMA", "Amazon", 2)
-                    .values(2L, "PMI", "PriceMinister", 1)
-                    .build());
+                insertInto("APP.ADDRESS")
+                .columns("LASTNAME", "FIRSTNAME", "MIDDLENAME", "PHONE", "EMAIL", "ADDRESS1", "ADDRESS2", "CITY",
+                		"STATE", "POSTALCODE", "COUNTRY")
+                .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?")
+                .build());
         DbSetup dbSetup = new DbSetup(new DataSourceDestination(dataSource), operation);
         
         dbSetup.launch();
@@ -59,6 +58,7 @@ public class UiTestWithDbSetup {
 	
 	@Test
 	public void test01() {
+		
 		dbSetupTracker.skipNextLaunch();
 		System.out.println("test new");
 		int beforeSize = _uidriver.numberOfAddresses();
