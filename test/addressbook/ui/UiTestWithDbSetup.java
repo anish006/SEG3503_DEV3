@@ -25,7 +25,7 @@ import addressbook.db.IDbAccess;
 
 
 /**
- * @author alonz
+ * @author alex nishimwe
  *
  */
 public class UiTestWithDbSetup {
