@@ -211,6 +211,8 @@ public class DbtestWithMocks {
 	 
 	 @Test
 	 public void testDeleteRecord() throws SQLException {
+		 Address addr = new Address(lastName, firstName, middleName, phone, email, address1, address2, city, state, 
+				 postalCode, country, 5);
 		 int idToDelete = 5;
 		 List<Object> rowItems = new ArrayList<Object>();
 		 rowItems.add(idToDelete);
@@ -226,7 +228,7 @@ public class DbtestWithMocks {
 		 rowItems.add(postalCode);
 		 rowItems.add(country);
 		 result.addRow(rowItems);
-		 addressDao.saveRecord(address);
+		 addressDao.saveRecord(addr);
 		 boolean expected = true;
 		 boolean actual = addressDao.deleteRecord(idToDelete);
 		 assertEquals(expected, actual);
