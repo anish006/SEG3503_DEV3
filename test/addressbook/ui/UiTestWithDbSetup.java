@@ -13,10 +13,14 @@ import org.junit.Test;
 import com.ninja_squad.dbsetup.DbSetup;
 import com.ninja_squad.dbsetup.DbSetupTracker;
 import com.ninja_squad.dbsetup.destination.DataSourceDestination;
+import com.ninja_squad.dbsetup.destination.DriverManagerDestination;
 import com.ninja_squad.dbsetup.operation.Operation;
 
 import addressbook.core.Address;
+import addressbook.db.AddressDao;
+import addressbook.db.DbAccess;
 import addressbook.db.IAddressDao;
+import addressbook.db.IDbAccess;
 
 
 
@@ -26,8 +30,9 @@ import addressbook.db.IAddressDao;
  */
 public class UiTestWithDbSetup {
 	
-	private DataSource dataSource;
 	private UIDriver _uidriver;
+	private IDbAccess dbaccess;
+	private AddressDao addressDao;
 	private static DbSetupTracker dbSetupTracker = new DbSetupTracker();
 	
 	public static final Operation DELETE_ALL =
@@ -42,6 +47,7 @@ public class UiTestWithDbSetup {
 	                .build());
 	@Before
     public void prepare() throws Exception {
+		dbaccess = new DbAccess();
         Operation operation =
             sequenceOf(
                 DELETE_ALL,
@@ -51,8 +57,11 @@ public class UiTestWithDbSetup {
                 		"STATE", "POSTALCODE", "COUNTRY")
                 .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?")
                 .build());
-        DbSetup dbSetup = new DbSetup(new DataSourceDestination(dataSource), operation);
         
+        DbSetup dbSetup = new DbSetup(new DriverManagerDestination("jdbc:derby:"+ "DefaultAddressBook", "addressuser", "addressuser"), operation);
+        
+        addressDao = new AddressDao();
+        _uidriver = new UIDriver(addressDao);
         dbSetup.launch();
     }
 	
