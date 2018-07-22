@@ -111,17 +111,17 @@ public class DbtestWithMocks {
 		 result.addColumn("COUNTRY");
 		 List<Object> rowItems = new ArrayList<Object>();
 		 rowItems.add(1);
-		 rowItems.add("Bruce");
-		 rowItems.add("Wayne");
-		 rowItems.add("the godfather");
-		 rowItems.add("666");
-		 rowItems.add("a@a.com");
-		 rowItems.add("a");
-		 rowItems.add("a");
-		 rowItems.add("a");
-		 rowItems.add("a");
-		 rowItems.add("A1B2C3");
-		 rowItems.add("Gondor");
+		 rowItems.add(lastName);
+		 rowItems.add(firstName);
+		 rowItems.add(middleName);
+		 rowItems.add(phone);
+		 rowItems.add(email);
+		 rowItems.add(address1);
+		 rowItems.add(address2);
+		 rowItems.add(city);
+		 rowItems.add(state);
+		 rowItems.add(postalCode);
+		 rowItems.add(country);
 		 result.addRow(rowItems);
 		 rowItems.clear();
 		 rowItems.add(2);
@@ -247,19 +247,6 @@ public class DbtestWithMocks {
 	 
 	 @Test
 	 public void testGetAddress() {
-		 
-		 result.addColumn("LASTNAME", new Object[]{ lastName });
-		 result.addColumn("FIRSTNAME", new Object[]{ firstName });
-		 result.addColumn("MIDDLENAME", new Object[]{ middleName });
-		 result.addColumn("PHONE", new Object[]{ phone });
-		 result.addColumn("EMAIL", new Object[]{ email });
-		 result.addColumn("ADDRESS1", new Object[]{ address1 } );
-		 result.addColumn("ADDRESS2", new Object[]{ address2 });
-		 result.addColumn("CITY", new Object[]{ city });
-		 result.addColumn("STATE", new Object[]{ state });
-		 result.addColumn("POSTALCODE", new Object[]{ postalCode });
-		 result.addColumn("COUNTRY", new Object[]{ country });
-		 result.addColumn("ID", new Object[]{ id });
 		 Address expected = address;
 		 Address actual = addressDao.getAddress(id);		
 		 assertTrue(expected.equals(actual));
