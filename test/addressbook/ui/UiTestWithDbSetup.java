@@ -21,7 +21,7 @@ import addressbook.db.IAddressDao;
 
 
 /**
- * @author alonz
+ * @author alex nishimwe
  *
  */
 public class UiTestWithDbSetup {
