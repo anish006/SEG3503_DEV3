@@ -170,21 +170,7 @@ public class DbtestWithMocks {
 		 jdbcModule.verifySQLStatementParameter(strSaveAddress, 0, 11, country);
 	 }
 	 
-	 private void verifySQLStatementParameter(String strsaveaddress2, int i, int j, String firstName2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void verifySQLStatementExecuted(String strsaveaddress2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void verifyPreparedStatementPresent(String strsaveaddress2) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 	@Test
 	 public void testEditRecord() throws SQLException {
 		 List<Object> rowItems = new ArrayList<Object>();
