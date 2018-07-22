@@ -640,7 +640,7 @@ public class UiTestWithMockDb {
         Address addr = new Address();
         addr.setId(-1);
         addr.setLastName("AZ");
-        addr.setEmail("a@1");
+        addr.setEmail("a@*");
         
         _uidriver.setAddress(addr);
         // click to save
