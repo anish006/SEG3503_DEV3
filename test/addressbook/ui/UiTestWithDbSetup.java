@@ -973,6 +973,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1016,6 +1017,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1059,6 +1061,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1102,6 +1105,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1145,6 +1149,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1188,6 +1193,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1232,6 +1238,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1275,6 +1282,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
@@ -1318,6 +1326,7 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
