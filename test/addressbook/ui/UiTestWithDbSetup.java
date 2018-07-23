@@ -357,12 +357,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -401,12 +402,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("_A", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -445,12 +447,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("a*", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -489,12 +492,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("a*", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -533,12 +537,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("_A", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -577,12 +582,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("a*", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -621,12 +627,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("_a", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -665,12 +672,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -709,12 +717,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -753,12 +762,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("aa");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -798,12 +808,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("*@a");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -842,12 +853,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("a@*");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -886,12 +898,13 @@ public class UiTestWithDbSetup {
         addr.setEmail("a@a.");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
 		_uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -930,11 +943,12 @@ public class UiTestWithDbSetup {
         addr.setEmail("");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
+        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("_A", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -977,8 +991,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("a*", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -1020,9 +1034,9 @@ public class UiTestWithDbSetup {
         _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
-       _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        _uidriver.selectAddress(afterSize);
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("_a", _uidriver.getAddress().getState());
@@ -1065,8 +1079,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("a*", _uidriver.getAddress().getState());
@@ -1109,8 +1123,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+       	Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+       	Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -1153,8 +1167,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+       	Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+       	Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -1197,8 +1211,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -1242,8 +1256,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
@@ -1286,8 +1300,8 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
