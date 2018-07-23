@@ -31,46 +31,43 @@ import addressbook.db.IDbAccess;
 public class UiTestWithDbSetup {
 	
 	private UIDriver _uidriver;
-	private IDbAccess dbaccess;
 	private AddressDao addressDao;
 	private static DbSetupTracker dbSetupTracker = new DbSetupTracker();
 	
 	public static final Operation DELETE_ALL =
 	        deleteAllFrom("APP.ADDRESS");
-	
+	/*
 	public static final Operation INSERT_REFERENCE_DATA =
 	        sequenceOf(
 	            insertInto("APP.ADDRESS")
 	                .columns("LASTNAME", "FIRSTNAME", "MIDDLENAME", "PHONE", "EMAIL", "ADDRESS1", "ADDRESS2", "CITY",
 	                		"STATE", "POSTALCODE", "COUNTRY")
-	                .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?","?")
-	                .build());
+	                .values("John", "Wayne", "", "", "", "", "", "", "", "","")
+	                .build());*/
 	@Before
     public void prepare() throws Exception {
-		dbaccess = new DbAccess();
         Operation operation =
             sequenceOf(
-                DELETE_ALL,
-                INSERT_REFERENCE_DATA,
+                DELETE_ALL,/*
+                INSERT_REFERENCE_DATA,*/
                 insertInto("APP.ADDRESS")
                 .columns("LASTNAME", "FIRSTNAME", "MIDDLENAME", "PHONE", "EMAIL", "ADDRESS1", "ADDRESS2", "CITY",
                 		"STATE", "POSTALCODE", "COUNTRY")
-                .values("?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?")
+                .values("John", "Wayne", "", "", "", "", "", "", "", "", "")
                 .build());
         
         DbSetup dbSetup = new DbSetup(new DriverManagerDestination("jdbc:derby:"+ "DefaultAddressBook", "addressuser", "addressuser"), operation);
         
         addressDao = new AddressDao();
-        _uidriver = new UIDriver(addressDao);
         
         dbSetup.launch();
     }
 	
 	@Test
 	public void test01() {
-		
-		dbSetupTracker.skipNextLaunch();
+		//dbSetupTracker.skipNextLaunch();
 		System.out.println("test new");
+        _uidriver = new UIDriver(addressDao);
 		int beforeSize = _uidriver.numberOfAddresses();
         int expectedSize = beforeSize+1;
         _uidriver.clickNew(); 
@@ -93,10 +90,159 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();
         String [] addrval = _uidriver.addressEntryAt(afterSize-1);        
         Assert.assertEquals(expectedSize, afterSize);
-        Assert.assertEquals("a_-zAZ", addrval[0]);
-		
+        Assert.assertEquals("a_-zAZ", addrval[1]);	
 	}
 	
+	@Test
+	public void test02() {
+		//dbSetupTracker.skipNextLaunch();
+		System.out.println("test delete");
+		_uidriver = new UIDriver(addressDao);
+		int beforeSize = _uidriver.numberOfAddresses();
+        int expectedSize = beforeSize-1;
+        _uidriver.selectAddress(beforeSize-1);
+        //last address value should be a_-zAZ
+		String [] addrvalue = _uidriver.addressEntryAt(beforeSize-1);
+		Assert.assertEquals("John", addrvalue[1]);
+        
+        _uidriver.clickDelete(); 
+        int afterSize = _uidriver.numberOfAddresses();        
+        Assert.assertEquals(expectedSize, afterSize);
+      //if there is still addresses, last address value should not be a_-zAZ once delete is done
+        if(afterSize>0) {
+        	String [] addrval = _uidriver.addressEntryAt(afterSize-1);
+        	Assert.assertNotEquals("a_-zAZ", addrval[1]);
+        }
+	}
+	
+	@Test
+	public void test03() {
+		//dbSetupTracker.skipNextLaunch();
+		System.out.println("test Edit");
+		_uidriver = new UIDriver(addressDao);
+		int size = _uidriver.numberOfAddresses();
+        _uidriver.selectAddress(size-1);
+        //last address value should be John
+		String [] addrvalue = _uidriver.addressEntryAt(size-1);
+		Assert.assertEquals("John", addrvalue[1]);
+        
+		_uidriver.clickEdit();
+		Address addr = new Address();
+        addr.setId(0);
+        addr.setLastName("a_-zAZ");
+        addr.setFirstName("a_-zAZ");
+        addr.setMiddleName("a_-zAZ");
+        addr.setCity("a_-zAZ");
+        addr.setState("a_-zAZ");
+        addr.setCountry("a_-zAZ");
+        addr.setAddress1("a_-zAZ19");
+        addr.setAddress2("a_-zAZ19");
+        addr.setPhone("666-6969");
+        addr.setEmail("azAZ09_@azAZ.com");
+        _uidriver.setAddress(addr);
+        _uidriver.clickSave();
+        int afterSize = _uidriver.numberOfAddresses();      
+        Assert.assertEquals(size, afterSize);
+      //last address value should be a_-zAZ once Edit is done
+		//_uidriver.selectAddress(afterSize);
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getMiddleName());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getCity());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getState());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getCountry());
+        Assert.assertEquals("a_-zAZ19", _uidriver.getAddress().getAddress1());
+        Assert.assertEquals("a_-zAZ19", _uidriver.getAddress().getAddress2());
+        Assert.assertEquals("666-6969", _uidriver.getAddress().getPhone());
+        Assert.assertEquals("azAZ09_@azAZ.com", _uidriver.getAddress().getEmail());
+	}
+	
+	@Test
+	public void test04() {
+		//dbSetupTracker.skipNextLaunch();
+		System.out.println("test Cancel");
+		_uidriver = new UIDriver(addressDao);
+		int size = _uidriver.numberOfAddresses();
+        _uidriver.selectAddress(size-1);
+        //last address value should be John
+		String [] addrvalue = _uidriver.addressEntryAt(size-1);
+		Assert.assertEquals("John", addrvalue[1]);
+        
+		_uidriver.clickEdit();
+		Address addr = new Address();
+        addr.setId(0);
+        addr.setLastName("a_-zAZ");
+        addr.setFirstName("a_-zAZ");
+        addr.setMiddleName("a_-zAZ");
+        addr.setCity("a_-zAZ");
+        addr.setState("a_-zAZ");
+        addr.setCountry("a_-zAZ");
+        addr.setAddress1("a_-zAZ19");
+        addr.setAddress2("a_-zAZ19");
+        addr.setPhone("666-6969");
+        addr.setEmail("azAZ09_@azAZ.com");
+        _uidriver.setAddress(addr);
+        _uidriver.clickCancel();
+        _uidriver.clickEdit();
+        
+        int afterSize = _uidriver.numberOfAddresses();      
+        Assert.assertEquals(size, afterSize);
+      //last address value should be the same after cancel
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
+        Assert.assertEquals("", _uidriver.getAddress().getCity());
+        Assert.assertEquals("", _uidriver.getAddress().getState());
+        Assert.assertEquals("", _uidriver.getAddress().getCountry());
+        Assert.assertEquals("", _uidriver.getAddress().getAddress1());
+        Assert.assertEquals("", _uidriver.getAddress().getAddress2());
+        Assert.assertEquals("", _uidriver.getAddress().getPhone());
+        Assert.assertEquals("", _uidriver.getAddress().getEmail());
+	}
+	
+	@Test
+	public void test05() {
+		//dbSetupTracker.skipNextLaunch();
+		System.out.println("test Save");
+		_uidriver = new UIDriver(addressDao);
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!");
+		int size = _uidriver.numberOfAddresses();
+        _uidriver.selectAddress(size-1);
+        //last address value should be John
+		String [] addrvalue = _uidriver.addressEntryAt(size-1);
+		Assert.assertEquals("John", addrvalue[1]);
+        
+		_uidriver.clickEdit();
+		Address addr = new Address();
+        addr.setId(0);
+        addr.setLastName("a_-zAZ");
+        addr.setFirstName("a_-zAZ");
+        addr.setMiddleName("a_-zAZ");
+        addr.setCity("a_-zAZ");
+        addr.setState("a_-zAZ");
+        addr.setCountry("a_-zAZ");
+        addr.setAddress1("a_-zAZ19");
+        addr.setAddress2("a_-zAZ19");
+        addr.setPhone("666-6969");
+        addr.setEmail("azAZ09_@azAZ.com");
+        _uidriver.setAddress(addr);
+        _uidriver.clickSave();
+        _uidriver.clickCancel();
+        int afterSize = _uidriver.numberOfAddresses();      
+        Assert.assertEquals(size, afterSize);
+      //last address value should be a_-zAZ once Edit is done
+		_uidriver.selectAddress(afterSize);
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getMiddleName());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getCity());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getState());
+        Assert.assertEquals("a_-zAZ", _uidriver.getAddress().getCountry());
+        Assert.assertEquals("a_-zAZ19", _uidriver.getAddress().getAddress1());
+        Assert.assertEquals("a_-zAZ19", _uidriver.getAddress().getAddress2());
+        Assert.assertEquals("666-6969", _uidriver.getAddress().getPhone());
+        Assert.assertEquals("azAZ09_@azAZ.com", _uidriver.getAddress().getEmail());
+	}
 
 }
 
