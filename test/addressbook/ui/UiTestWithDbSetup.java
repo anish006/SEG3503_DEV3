@@ -1330,12 +1330,12 @@ public class UiTestWithDbSetup {
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
        _uidriver.selectAddress(afterSize);
-        Assert.assertEquals("AZ", _uidriver.getAddress().getLastName());
-        Assert.assertEquals("", _uidriver.getAddress().getFirstName());
+        Assert.assertEquals("John", _uidriver.getAddress().getLastName());
+        Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
-        Assert.assertEquals("a*", _uidriver.getAddress().getCountry());
+        Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
