@@ -589,7 +589,7 @@ public class UiTestWithDbSetup {
 		_uidriver.selectAddress(afterSize);
 		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
         Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
-        Assert.assertEquals("a*", _uidriver.getAddress().getMiddleName());
+        Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
@@ -634,7 +634,7 @@ public class UiTestWithDbSetup {
 		_uidriver.selectAddress(afterSize);
 		Assert.assertEquals("John", _uidriver.getAddress().getLastName());
         Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
-        Assert.assertEquals("_a", _uidriver.getAddress().getMiddleName());
+        Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
@@ -686,7 +686,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
-        Assert.assertEquals("012-345", _uidriver.getAddress().getPhone());
+        Assert.assertEquals("", _uidriver.getAddress().getPhone());
         Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
 	
@@ -731,7 +731,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
-        Assert.assertEquals("1A", _uidriver.getAddress().getPhone());
+        Assert.assertEquals("", _uidriver.getAddress().getPhone());
         Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
 	
@@ -777,7 +777,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
-        Assert.assertEquals("aa", _uidriver.getAddress().getEmail());
+        Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
 	
 	
@@ -823,7 +823,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
-        Assert.assertEquals("*@a", _uidriver.getAddress().getEmail());
+        Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
 	
 	@Test
@@ -868,7 +868,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
-        Assert.assertEquals("a@*", _uidriver.getAddress().getEmail());
+        Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
 	
 	@Test
@@ -913,7 +913,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
-        Assert.assertEquals("a@a.", _uidriver.getAddress().getEmail());
+        Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
 	
 	@Test
@@ -950,7 +950,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("John", _uidriver.getAddress().getLastName());
         Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
-        Assert.assertEquals("_A", _uidriver.getAddress().getCity());
+        Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
@@ -994,7 +994,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("John", _uidriver.getAddress().getLastName());
         Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
-        Assert.assertEquals("a*", _uidriver.getAddress().getCity());
+        Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
@@ -1039,7 +1039,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
-        Assert.assertEquals("_a", _uidriver.getAddress().getState());
+        Assert.assertEquals("", _uidriver.getAddress().getState());
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
@@ -1083,7 +1083,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("Wayne", _uidriver.getAddress().getFirstName());
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
-        Assert.assertEquals("a*", _uidriver.getAddress().getState());
+        Assert.assertEquals("", _uidriver.getAddress().getState());
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
@@ -1131,7 +1131,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
-        Assert.assertEquals("A1A1A", _uidriver.getAddress().getPostalCode());
+        Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
         Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
@@ -1175,7 +1175,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
-        Assert.assertEquals("A1A1A1A", _uidriver.getAddress().getPostalCode());
+        Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
         Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
@@ -1219,7 +1219,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
-        Assert.assertEquals("a1a1a1", _uidriver.getAddress().getPostalCode());
+        Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
         Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
@@ -1264,7 +1264,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
-        Assert.assertEquals("AAAAAA", _uidriver.getAddress().getPostalCode());
+        Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
         Assert.assertEquals("", _uidriver.getAddress().getPhone());
         Assert.assertEquals("", _uidriver.getAddress().getEmail());
 	}
@@ -1305,7 +1305,7 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("", _uidriver.getAddress().getMiddleName());
         Assert.assertEquals("", _uidriver.getAddress().getCity());
         Assert.assertEquals("", _uidriver.getAddress().getState());
-        Assert.assertEquals("_a", _uidriver.getAddress().getCountry());
+        Assert.assertEquals("", _uidriver.getAddress().getCountry());
         Assert.assertEquals("", _uidriver.getAddress().getAddress1());
         Assert.assertEquals("", _uidriver.getAddress().getAddress2());
         Assert.assertEquals("", _uidriver.getAddress().getPostalCode());
