@@ -156,9 +156,9 @@ public class UiTestWithDbSetup {
         Assert.assertEquals("666-6969", _uidriver.getAddress().getPhone());
         Assert.assertEquals("azAZ09_@azAZ.com", _uidriver.getAddress().getEmail());
 	}
-	
+
 	@Test
-	public void test04() {
+	public void test4() {
 		//dbSetupTracker.skipNextLaunch();
 		System.out.println("test Cancel");
 		_uidriver = new UIDriver(addressDao);
@@ -183,7 +183,6 @@ public class UiTestWithDbSetup {
         addr.setEmail("azAZ09_@azAZ.com");
         _uidriver.setAddress(addr);
         _uidriver.clickCancel();
-        _uidriver.clickEdit();
         
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
@@ -205,7 +204,6 @@ public class UiTestWithDbSetup {
 		//dbSetupTracker.skipNextLaunch();
 		System.out.println("test Save");
 		_uidriver = new UIDriver(addressDao);
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!");
 		int size = _uidriver.numberOfAddresses();
         _uidriver.selectAddress(size-1);
         //last address value should be John
@@ -227,7 +225,6 @@ public class UiTestWithDbSetup {
         addr.setEmail("azAZ09_@azAZ.com");
         _uidriver.setAddress(addr);
         _uidriver.clickSave();
-        _uidriver.clickCancel();
         int afterSize = _uidriver.numberOfAddresses();      
         Assert.assertEquals(size, afterSize);
       //last address value should be a_-zAZ once Edit is done
